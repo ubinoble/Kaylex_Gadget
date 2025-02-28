@@ -310,7 +310,7 @@ section.home {
 }
 
 .contact-info {
-    width: 350px;
+    width: 100%;
     background: #f9f9f9;
     padding: 60px 40px 20px;
 }
