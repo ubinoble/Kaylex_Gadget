@@ -48,35 +48,40 @@
     </header>
 
     
-    <!-- Product Review Section -->
-<div class="review-section">
-  <h2>Leave a Review</h2>
-  
-  <form id="reviewForm">
-    <label for="rating">Rate this product:</label>
-    <select id="rating" name="rating">
-      <option value="1">1 Star</option>
-      <option value="2">2 Stars</option>
-      <option value="3">3 Stars</option>
-      <option value="4">4 Stars</option>
-      <option value="5">5 Stars</option>
-    </select>
+    <!-- Review Section (already included) -->
+<div class="review-page">
 
-    <label for="comment">Your Comment:</label>
-    <textarea id="comment" name="comment" required></textarea>
+  <!-- Product Review Section -->
+  <div class="review-section">
+    <h2>Leave a Review</h2>
+    
+    <form id="reviewForm">
+      <label for="rating">Rate this product:</label>
+      <select id="rating" name="rating">
+        <option value="1">1 Star</option>
+        <option value="2">2 Stars</option>
+        <option value="3">3 Stars</option>
+        <option value="4">4 Stars</option>
+        <option value="5">5 Stars</option>
+      </select>
 
-    <button type="submit">Submit Review</button>
-  </form>
+      <label for="comment">Your Comment:</label>
+      <textarea id="comment" name="comment" placeholder="Enter your thoughts here..." required></textarea>
 
-  <div id="feedbackMessage"></div>
-</div>
+      <button type="submit">Submit Review</button>
+    </form>
 
-<!-- Most Loved Products Section -->
-<div class="top-reviews">
-  <h2>Most Loved Products</h2>
-  <ul id="topReviewsList">
-    <!-- Top reviews will be displayed here dynamically -->
-  </ul>
+    <div id="feedbackMessage"></div>
+  </div>
+
+  <!-- Most Loved Products Section -->
+  <div class="top-reviews">
+    <h2>Most Loved Products</h2>
+    <ul id="topReviewsList">
+      <!-- Top reviews will be displayed here dynamically -->
+    </ul>
+  </div>
+
 </div>
 
     <script src="js/script.js"></script>
