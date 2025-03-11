@@ -335,86 +335,131 @@ section.home {
     color: #111;
 }
 
-/* Centering the form in the middle of the screen */
+/* General styling */
 body, html {
-  height: 100%; /* Make sure the body and html take up full height */
-  margin: 0; /* Remove default margin */
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7f9; /* Light grey background */
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4; /* Optional background color */
+  justify-content: center;
+  align-items: center;
 }
 
-/* Styling the review section */
+/* Main container for review section */
 .review-section {
+  width: 350px;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px; /* Rounded corners for the form */
-  background-color: white; /* White background for the form */
-  width: 300px; /* Set the width of the form */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for the form */
+  background-color: #ffffff;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  text-align: center;
+  margin-bottom: 20px; /* Space between form and reviews */
 }
 
-/* Styling the form elements */
 .review-section h2 {
-  margin-bottom: 10px;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
 }
 
+/* Form elements */
 #reviewForm {
   display: flex;
   flex-direction: column;
 }
 
-#reviewForm select,
+#reviewForm label {
+  text-align: left;
+  margin-bottom: 5px;
+  color: #555;
+  font-size: 14px;
+}
+
+#reviewForm select, 
 #reviewForm textarea {
-  margin: 5px 0;
-  padding: 8px;
+  padding: 12px;
   font-size: 16px;
+  margin-bottom: 15px;
+  border-radius: 8px; /* Rounded corners for inputs */
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease-in-out;
+}
+
+#reviewForm select:focus, 
+#reviewForm textarea:focus {
+  border-color: #4CAF50; /* Green border on focus */
+}
+
+#reviewForm textarea {
+  resize: none;
+  height: 100px; /* Height of textarea */
 }
 
 #reviewForm button {
-  padding: 10px;
-  background-color: #4CAF50;
+  padding: 12px;
+  background-color: #4CAF50; /* Green color */
   color: white;
+  font-size: 16px;
   border: none;
   cursor: pointer;
-  margin-top: 10px; /* Add space between the button and the form */
-  border-radius: 4px; /* Rounded button corners */
+  border-radius: 8px; /* Rounded button */
+  transition: background-color 0.3s ease;
 }
 
 #reviewForm button:hover {
-  background-color: #45a049;
+  background-color: #45a049; /* Darker green on hover */
 }
 
-/* Styling for the "Most Loved" section */
+/* Feedback message styling */
+#feedbackMessage {
+  margin-top: 10px;
+  color: #4CAF50;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Styling for the Most Loved Products section */
 .top-reviews {
-  margin-top: 20px;
+  width: 350px;
   padding: 20px;
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  width: 300px; /* Same width as the review form */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  text-align: center;
 }
 
 .top-reviews h2 {
-  margin-bottom: 10px;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
 }
 
 #topReviewsList {
   list-style-type: none;
   padding: 0;
+  margin-top: 10px;
 }
 
 #topReviewsList li {
-  margin: 10px 0;
-  padding: 10px;
+  margin-bottom: 15px;
+  padding: 15px;
   border: 1px solid #ddd;
+  border-radius: 8px;
   background-color: #f9f9f9;
-  border-radius: 4px; /* Rounded corners for each review */
 }
 
+#topReviewsList li strong {
+  display: block;
+  font-size: 18px;
+  color: #333;
+}
+
+#topReviewsList li p {
+  font-size: 14px;
+  color: #555;
+  margin-top: 5px;
+}
 
 
 @media (max-width: 1068px) {
