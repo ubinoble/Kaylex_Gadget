@@ -54,9 +54,8 @@ function displayTopReviews() {
     li.innerHTML = `<strong>${review.rating} Stars</strong><p>${review.comment}</p>`;
     topReviewsList.appendChild(li);
   });
-}
 
-<script>
+    <script>
 // Function to handle form submission
 document.getElementById("reviewForm").addEventListener("submit", function(event) {
   event.preventDefault();
@@ -123,4 +122,7 @@ function deleteReview(index) {
 // Display reviews on page load
 displayReviews();
 </script>
+
+}
+
 
