@@ -335,6 +335,64 @@ section.home {
     color: #111;
 }
 
+/* Basic styling for the review section */
+.review-section {
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  width: 300px;
+}
+
+.review-section h2 {
+  margin-bottom: 10px;
+}
+
+#reviewForm {
+  display: flex;
+  flex-direction: column;
+}
+
+#reviewForm select,
+#reviewForm textarea {
+  margin: 5px 0;
+  padding: 8px;
+  font-size: 16px;
+}
+
+#reviewForm button {
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#reviewForm button:hover {
+  background-color: #45a049;
+}
+
+/* Styling for the Most Loved Products section */
+.top-reviews {
+  margin-top: 20px;
+}
+
+.top-reviews h2 {
+  margin-bottom: 10px;
+}
+
+#topReviewsList {
+  list-style-type: none;
+  padding: 0;
+}
+
+#topReviewsList li {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+
+
 @media (max-width: 1068px) {
     .home-img {
         display: none;
