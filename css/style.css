@@ -462,6 +462,23 @@ section.home {
   margin-top: 5px;
 }
 
+/* Adding delete button styles */
+#topReviewsList li .delete-btn {
+  background-color: #e74c3c; /* Red button */
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+#topReviewsList li .delete-btn:hover {
+  background-color: #c0392b;
+}
+
+
 
 
 @media (max-width: 1068px) {
