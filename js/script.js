@@ -6,8 +6,8 @@ toggle.addEventListener('click', () => {
     navigation.classList.toggle('active');
 });
 
-// Store reviews in an array (you can use a database for real-world applications)
-let reviews = [];
+// Get reviews from Local Storage (if any)
+let reviews = JSON.parse(localStorage.getItem('reviews')) || [];
 
 // Function to handle the form submission
 document.getElementById('reviewForm').addEventListener('submit', function(event) {
@@ -26,6 +26,9 @@ document.getElementById('reviewForm').addEventListener('submit', function(event)
 
   // Save the review to the reviews array
   reviews.push(review);
+
+  // Save reviews to Local Storage
+  localStorage.setItem('reviews', JSON.stringify(reviews));
 
   // Clear the form
   document.getElementById('reviewForm').reset();
@@ -83,7 +86,15 @@ function deleteReview(reviewId) {
     // Remove the review from the array
     reviews.splice(reviewIndex, 1);
 
+    // Save updated reviews to Local Storage
+    localStorage.setItem('reviews', JSON.stringify(reviews));
+
     // Update the reviews display
     displayTopReviews();
   }
 }
+
+// On page load, display the reviews from Local Storage
+window.onload = function() {
+  displayTopReviews();
+};
