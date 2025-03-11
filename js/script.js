@@ -1,10 +1,10 @@
-const toggle = document.querySelector('.toggle')
-const navigation = document.querySelector('.navigation')
+const toggle = document.querySelector('.toggle');
+const navigation = document.querySelector('.navigation');
 
 toggle.addEventListener('click', () => {
-    toggle.classList.toggle('active')
-    navigation.classList.toggle('active')
-})
+    toggle.classList.toggle('active');
+    navigation.classList.toggle('active');
+});
 
 // Store reviews in an array (you can use a database for real-world applications)
 let reviews = [];
@@ -21,6 +21,7 @@ document.getElementById('reviewForm').addEventListener('submit', function(event)
   const review = {
     rating: rating,
     comment: comment,
+    id: new Date().getTime()  // Unique ID for each review
   };
 
   // Save the review to the reviews array
@@ -51,9 +52,38 @@ function displayTopReviews() {
   // Display top reviews
   topReviews.forEach(review => {
     const li = document.createElement('li');
-    li.innerHTML = `<strong>${review.rating} Stars</strong><p>${review.comment}</p>`;
+    
+    // Add review content and a delete button
+    li.innerHTML = `
+      <strong>${review.rating} Stars</strong>
+      <p>${review.comment}</p>
+      <button class="delete-btn" data-id="${review.id}">Delete</button>
+    `;
+    
+    // Add the list item to the list
     topReviewsList.appendChild(li);
+  });
+
+  // Add event listeners for delete buttons
+  const deleteButtons = document.querySelectorAll('.delete-btn');
+  deleteButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const reviewId = parseInt(this.getAttribute('data-id'));  // Get the ID of the review to delete
+      deleteReview(reviewId);
+    });
   });
 }
 
+// Function to delete a review
+function deleteReview(reviewId) {
+  // Find the index of the review to delete
+  const reviewIndex = reviews.findIndex(review => review.id === reviewId);
+  
+  if (reviewIndex !== -1) {
+    // Remove the review from the array
+    reviews.splice(reviewIndex, 1);
 
+    // Update the reviews display
+    displayTopReviews();
+  }
+}
